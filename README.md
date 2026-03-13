@@ -2,6 +2,8 @@
 
 A minimal Python voice recorder using `sounddevice`.
 
+Requires Python 3.9+.
+
 ## Install
 
 ```bash
