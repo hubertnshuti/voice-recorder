@@ -1,23 +1,30 @@
-# Voice Recorder in Python
+# Voice Recorder (Python)
 
-A minimal Python voice recorder using `sounddevice`.
+A small Python project for recording microphone audio and exporting it as WAV files.
 
-Requires Python 3.9+.
+## Overview
 
-## Install
+This project records stereo audio at 44.1 kHz and saves the same recording using two common Python export methods.
 
-```bash
-pip install -r requirements.txt
-```
+It works as a clean reference for:
+- short voice recording sessions
+- NumPy-based audio buffering
+- WAV export through multiple libraries
 
-## Run
+## Technical Notes
 
-```bash
-python voice_recorder.py
-```
+- Audio capture is handled with `sounddevice`.
+- The recording is stored as a NumPy array for a fixed time window.
+- Export option 1 uses `scipy.io.wavfile.write`.
+- Export option 2 uses `wavio.write` with 16-bit sample width.
 
-This records 5 seconds of stereo audio at 44100 Hz and saves:
-- `recording0.wav` (via scipy)
-- `recording1.wav` (via wavio)
+## Output Artifacts
 
-Both files are written to the project root directory.
+The recorder writes two WAV files in the project root:
+- `recording0.wav` (SciPy export)
+- `recording1.wav` (Wavio export)
+
+## Project Scope
+
+The current version focuses on a straightforward recording flow and consistent export output.
+Possible next improvements include configurable duration, input device selection, and timestamped file names.
